@@ -16,3 +16,23 @@ spec:
   selector:
     matchLabels:
       app: express
+
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: traefik
+  namespace: beta
+  labels:
+    team: devops
+spec:
+  endpoints:
+    - port: metrics
+      interval: 15s
+  namespaceSelector:
+    matchNames:
+      - beta
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: traefik
+      app.kubernetes.io/instance: traefik-beta
