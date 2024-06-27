@@ -18,11 +18,11 @@ spec:
           name: http_rate
         target:
           type: AverageValue
-          averageValue: 100m
-    - type: Resource
-      resource:
-        name: cpu
-        target:
-          type: Utilization
-          averageUtilization: 80
+          averageValue: 500m
+#    - type: Resource
+#      resource:
+#        name: cpu
+#        target:
+#          type: Utilization
+#          averageUtilization: 80
 
